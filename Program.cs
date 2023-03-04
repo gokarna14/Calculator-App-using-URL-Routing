@@ -21,7 +21,11 @@ app.Use(async (context, next)=>{
 app.MapGet("add/{*catchcall}", Add.Endpoint)
 .WithDisplayName("Add Operation");
 
+app.MapGet("multiply/{*catchcall}", Multiply.Endpoint)
+.WithDisplayName("Multiply operation");
 
+app.MapGet("modulo/{FirstNumber}/{SecondNumber}", Modulo.Endpoint)
+.WithDisplayName("Modulo Operation");
 
 
 app.MapFallback(async context => {
